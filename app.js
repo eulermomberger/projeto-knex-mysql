@@ -19,21 +19,21 @@ app.get('/users', async (req, res) => {
   }
 });
 
-// // Rota para criar um novo usuário
-// app.post('/users', async (req, res) => {
-//   const { name, email } = req.body;
-//   if (!name || !email) {
-//     return res.status(400).json({ error: 'Nome e email são obrigatórios' });
-//   }
+// Rota para criar um novo usuário
+app.post('/users', async (req, res) => {
+  const { name, email } = req.body;
+  if (!name || !email) {
+    return res.status(400).json({ error: 'Nome e email são obrigatórios' });
+  }
 
-//   try {
-//     await db('users').insert({ name, email });
-//     res.status(201).json({ message: 'Usuário criado com sucesso' });
-//   } catch (error) {
-//     console.error('Erro ao criar usuário:', error);
-//     res.status(500).json({ error: 'Erro interno do servidor' });
-//   }
-// });
+  try {
+    await db('users').insert({ name, email });
+    res.status(201).json({ message: 'Usuário criado com sucesso' });
+  } catch (error) {
+    console.error('Erro ao criar usuário:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
 
 app.get('/', async (req, res) => {
   res.send(`
