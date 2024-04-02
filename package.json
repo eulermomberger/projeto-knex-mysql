@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js & knex migrate:latest --env production",
-    "knex": "npx knex",    
+    "knex": "npx knex",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +15,9 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "knex": "^3.1.0",
+    "pg": "^8.11.4"
+  },
+  "devDependencies": {
     "mysql": "^2.18.1"
   }
 }
