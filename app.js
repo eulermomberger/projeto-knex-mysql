@@ -8,16 +8,16 @@ app.use(express.json());
 app.use(express.raw({ type: 'application/vnd.custom-type' }));
 app.use(express.text({ type: 'text/html' }));
 
-// // Rota para listar todos os usuários
-// app.get('/users', async (req, res) => {
-//   try {
-//     const users = await db('users').select('*');
-//     res.json({ users });
-//   } catch (error) {
-//     console.error('Erro ao listar usuários:', error);
-//     res.status(500).json({ error: 'Erro interno do servidor' });
-//   }
-// });
+// Rota para listar todos os usuários
+app.get('/users', async (req, res) => {
+  try {
+    const users = await db('users').select('*');
+    res.json({ users });
+  } catch (error) {
+    console.error('Erro ao listar usuários:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
 
 // // Rota para criar um novo usuário
 // app.post('/users', async (req, res) => {
